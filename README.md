@@ -112,11 +112,26 @@ Bu bölümde, projenin ulaştığı nihai yetenekler ve bu süreçte karşılaş
     -   **Çok Dillilik:** Arka planda çalışan dil tespiti ve çeviri katmanı sayesinde, kullanıcılar sorularını kendi dillerinde sorabilmekte ve yine kendi dillerinde cevap alabilmektedir.
     -   **Web Arayüzü:** Gradio ile geliştirilen modern ve kullanıcı dostu arayüz, projenin herkes tarafından kolayca test edilmesini sağlamaktadır.
 
--   🛠️ **Zorluklar ve Öğrenilenler:** Geliştirme sürecinde, modern yapay zeka projelerinin doğası gereği birçok teknik zorlukla karşılaşılmış ve bu zorluklar metodik bir hata ayıklama süreciyle aşılmıştır:
-    -   **Bağımlılık Yönetimi (`Dependency Hell`):** Projenin en büyük zorluğu, `langchain`, `google-generativeai` ve `chromadb` gibi hızla gelişen kütüphaneler arasındaki versiyon uyumsuzlukları olmuştur. Bu durum, `ModuleNotFoundError` ve `ResolutionImpossible` gibi kritik kurulum hatalarına yol açmıştır.
-        -   **Öğrenilen Ders:** Kütüphaneleri `pip install -U library` gibi basit komutlarla kurmak yerine, `langchain[google-genai]` gibi entegrasyonu garantileyen özel kurulum komutları kullanmanın veya kütüphaneleri mantıksal gruplar halinde kurmanın bu tür çakışmaları önlediği öğrenilmiştir.
-    -   **Colab Ortamının İncelikleri:** Google Colab'de, `pip install` ile yeni bir kütüphane kurulduktan sonra, çalışan oturumun (kernel) bu yeni kütüphaneyi otomatik olarak tanımadığı tespit edilmiştir.
-        -   **Öğrenilen Ders:** Kurulum işlemlerinden sonra Colab oturumunu manuel olarak yeniden başlatmanın (`Runtime -> Restart session`) "Altın Kural" olduğu ve bu adımın `import` hatalarını kesin olarak çözdüğü anlaşılmıştır.
-    -   **API ve Model Erişimi:** Proje sırasında kullanılan `gemini-1.5-flash` gibi "ön izleme" (preview) modellerine erişimin, API anahtarının yetkilerine ve Google'ın anlık güncellemelerine bağlı olarak değişkenlik gösterebildiği görülmüştür.
-        -   **Öğrenilen Ders:** Bir modelin `Not Found (404)` hatası vermesi durumunda, kütüphaneyi suçlamadan önce `genai.list_models()` gibi yöntemlerle o anki hesap için mevcut olan modelleri doğrulamanın ve kodda bu güncel model adını kullanmanın önemi kavranmıştır.
-    -   **Bu süreç, bir yapay zeka projesinin başarısının sadece iyi bir kod yazmaktan değil, aynı zamanda sağlam bir ortam kurma, sabırlı hata ayıklama ve kullanılan araçların iç dinamiklerini anlama becerisinden geçtiğini göstermiştir.**
+### Zorluklar ve Öğrenilenler 🛠️
+Geliştirme sürecinin en büyük zorluğu, `langchain` ekosistemindeki kütüphaneler arasında yaşanan versiyon uyumsuzlukları (`dependency hell`) oldu. Bu durum, `ModuleNotFoundError` gibi kritik kurulum hatalarına yol açtı.
+
+**Çıkarılan Dersler:**
+- **Doğru Kurulum Yöntemi:** `langchain[google-genai]` gibi entegrasyonu garantileyen özel komutların, basit `pip install` komutlarından daha stabil olduğu öğrenildi.
+- **Colab'in "Altın Kuralı":** Kurulum (`pip install`) işlemlerinden sonra Colab oturumunu yeniden başlatmanın (`Restart session`), `import` hatalarını çözmek için kritik bir adım olduğu anlaşıldı.
+- Bu süreç, bir projenin başarısının sadece kodun kendisiyle değil, aynı zamanda sağlam bir geliştirme ortamı kurma ve sabırlı hata ayıklama becerisiyle de yakından ilgili olduğunu gösterdi.
+
+---
+
+## 🔮 Gelecek Geliştirmeleri (Future Work)
+
+Bu proje, güçlü bir temel üzerine kurulmuştur ve gelecekte birçok yönde geliştirilebilir:
+
+-   **Performans Optimizasyonu:** Şu anki cevap verme süresi, özellikle CPU üzerinde çalışırken yavaş olabilmektedir. Bu süreyi kısaltmak için aşağıdaki yöntemler araştırılabilir:
+    -   **Daha Hızlı Embedding Modelleri:** `all-mpnet-base-v2` yerine, daha küçük ama hala etkili olan (örneğin `BAAI/bge-small-en`) embedding modelleri denenebilir.
+    -   **Veritabanı İndekslemesi:** `ChromaDB` yerine, `FAISS` gibi daha gelişmiş indeksleme yeteneklerine sahip bir vektör veritabanı kullanarak arama (retrieval) adımı hızlandırılabilir.
+    -   **Kalıcı "Deploy":** Projeyi, GPU destekli bir **Hugging Face Spaces** ortamına kalıcı olarak deploy etmek, hem 7/24 erişim sağlar hem de daha güçlü donanım sayesinde cevap sürelerini önemli ölçüde azaltır.
+
+-   **Daha Akıllı Kaynak Gösterme:** Şu anki sistem, cevabı üretirken hangi metin parçalarını kullandığını biliyor. Bir sonraki adım, bu kaynakları Gradio arayüzünde "Kaynakları Göster" gibi açılır bir menü altında sunarak chatbot'un şeffaflığını ve güvenilirliğini artırmak olabilir.
+
+-   **Veri Setini Zenginleştirme:** Mevcut bilimsel veri setine ek olarak, James Clear'ın "Atomik Alışkanlıklar" gibi popüler kitaplardan veya pratik teknikler sunan blog yazılarından metinler eklenerek, chatbot'un sadece "bilen" değil, aynı zamanda "eyleme geçiren" bir koç olması sağlanabilir.
+
