@@ -14,9 +14,17 @@ Nörobilim Asistanı'nı canlı olarak test etmek için aşağıdaki linke tıkl
 
 *(Not: Bu link, Gradio tarafından oluşturulmuş geçici bir tüneldir ve 72 saat sonra sona erebilir. Linkin çalışması için projenin Colab ortamında aktif olması gerekmektedir.)*
 
-### Arayüz Görüntüsü
-![Nörobilim Asistanı Arayüzü]([ARAYÜZÜN EKRAN GÖRÜNTÜSÜNÜN GITHUB LİNKİNİ BURAYA YAPIŞTIR])
-*(İpucu: Ekran görüntüsünü reponuza yükleyin ve resmin linkini buraya ekleyin.)*
+### Arayüz Görüntüleri
+
+Projenin modern ve kullanıcı dostu arayüzü, hem Türkçe hem de İngilizce sorulara verdiği hafızalı ve çok dilli cevaplar aşağıda sergilenmektedir.
+
+| Ana Arayüz & Türkçe Soru | Hafızalı Takip Sorusu |
+| :---: | :---: |
+| ![Ana Arayüz](https://github.com/Fatmanurkntr/Neuroscience-Chatbot/blob/main/chatbotekran.png?raw=true) | ![Hafıza Testi](https://github.com/Fatmanurkntr/Neuroscience-Chatbot/blob/main/chatbotekran1.png?raw=true) |
+
+| İngilizce Soru ve Cevap | Derinlemesine Bilimsel Soru |
+| :---: | :---: |
+| ![İngilizce Test](https://github.com/Fatmanurkntr/Neuroscience-Chatbot/blob/main/chatbotekran2.png?raw=true) | ![Bilimsel Soru](https://github.com/Fatmanurkntr/Neuroscience-Chatbot/blob/main/chatbotekran3.png?raw=true) |
 
 ### Product Kılavuzu
 Arayüzde sizi basit ve kullanıcı dostu bir sohbet ekranı karşılayacaktır.
