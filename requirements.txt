@@ -1,0 +1,12 @@
+```text
+langchain[google-genai]
+langchain-huggingface
+langchain-chroma
+langchain-community
+langchain-text-splitters
+chromadb
+datasets
+pandas
+gradio
+google-cloud-translate
+```
