@@ -76,13 +76,15 @@ Proje, Büyük Dil Modelleri'nin (LLM) halüsinasyon riskini ortadan kaldırmak 
 
 ## ⚙️ Kodun Çalışma Kılavuzu
 
-Bu projenin kodlarını kendi ortamınızda çalıştırmak için aşağıdaki adımları izleyebilirsiniz.
+Bu projenin kodlarını kendi ortamınızda (örneğin Google Colab) çalıştırmak için aşağıdaki adımları izleyebilirsiniz.
 
-1.  **Repoyu Klonlama:**
-    ```bash
-    git clone https://github.com/[KULLANICI_ADINIZ]/[REPO_ADINIZ].git
-    cd [REPO_ADINIZ]
-    ```
+### 1. Proje Dosyalarını Edinme (Klonlama)
+
+Öncelikle, projenin tüm dosyalarını içeren bu GitHub reposunu kendi bilgisayarınıza veya bulut ortamınıza klonlayın:
+
+```bash
+git clone https://github.com/Fatmanurkntr/Neuroscience-Chatbot.git
+cd Neuroscience-Chatbot
 
 2.  **Gerekli Kütüphaneleri Kurma:**
     Projenin çalışması için gereken tüm kütüphaneler `requirements.txt` dosyasında listelenmiştir.
