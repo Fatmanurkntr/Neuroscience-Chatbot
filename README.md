@@ -133,5 +133,5 @@ Bu proje, güçlü bir temel üzerine kurulmuştur ve gelecekte birçok yönde g
 
 -   **Daha Akıllı Kaynak Gösterme:** Şu anki sistem, cevabı üretirken hangi metin parçalarını kullandığını biliyor. Bir sonraki adım, bu kaynakları Gradio arayüzünde "Kaynakları Göster" gibi açılır bir menü altında sunarak chatbot'un şeffaflığını ve güvenilirliğini artırmak olabilir.
 
--   **Veri Setini Zenginleştirme:** Mevcut bilimsel veri setine ek olarak, James Clear'ın "Atomik Alışkanlıklar" gibi popüler kitaplardan veya pratik teknikler sunan blog yazılarından metinler eklenerek, chatbot'un sadece "bilen" değil, aynı zamanda "eyleme geçiren" bir koç olması sağlanabilir.
+-   **Veri Setini Zenginleştirme:** Mevcut bilimsel ve akademik veri setine ek olarak, alanında uzmanlaşmış yazarların popüler bilim kitaplarından, pratik teknikler sunan blog yazılarından ve vaka analizlerinden elde edilecek metinlerle bilgi bankası zenginleştirilebilir. Bu, chatbot'un sadece "neden" sorusuna bilimsel cevaplar vermesini değil, aynı zamanda "nasıl" sorusuna da eyleme geçirilebilir, pratik ve denenmiş metodolojiler sunan bir asistan olmasını sağlar.
 
