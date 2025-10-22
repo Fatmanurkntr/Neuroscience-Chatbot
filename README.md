@@ -10,17 +10,17 @@ Bu proje, RAG (Retrieval Augmented Generation) mimarisine dayalı, nörobilimsel
 
 Nörobilim Asistanı'nı canlı olarak test etmek için aşağıdaki linke tıklayabilirsiniz. Arayüz, alışkanlıklar, motivasyon, erteleme ve beynin çalışma prensipleri gibi konularda hem Türkçe hem de İngilizce soruları yanıtlayabilir.
 
-**👉 [CANLI DEMO LİNKİNİ BURAYA YAPIŞTIRIN]**
+**👉 [https://bb718df71b4bb1b43e.gradio.live/]**
 
 *(`Önemli Not:` Bu link, Gradio tarafından oluşturulmuş geçici bir tüneldir ve 72 saat sonra sona erebilir. Linkin çalışması için projenin Colab not defterinin arka planda aktif olması gerekmektedir. Eğer link çalışmıyorsa, projenin canlı demosu için iletişime geçebilirsiniz.)*
 
 ### Arayüz Görüntüleri
 
-| Ana Arayüz & Türkçe Soru | Hafızalı Takip Sorusu |
+| Ana Arayüz & Türkçe Soru | İngilizce Soru & Cevap |
 | :---: | :---: |
 | ![Ana Arayüz](https://github.com/Fatmanurkntr/Neuroscience-Chatbot/blob/main/chatbotekran.png?raw=true) | ![Hafıza Testi](https://github.com/Fatmanurkntr/Neuroscience-Chatbot/blob/main/chatbotekran1.png?raw=true) |
 
-| İngilizce Soru ve Cevap | Derinlemesine Bilimsel Soru |
+| Türkçe Soru & Cevap | Hafıza Takipli Soru |
 | :---: | :---: |
 | ![İngilizce Test](https://github.com/Fatmanurkntr/Neuroscience-Chatbot/blob/main/chatbotekran2.png?raw=true) | ![Bilimsel Soru](https://github.com/Fatmanurkntr/Neuroscience-Chatbot/blob/main/chatbotekran3.png?raw=true) |
 
@@ -112,8 +112,11 @@ Bu bölümde, projenin ulaştığı nihai yetenekler ve bu süreçte karşılaş
     -   **Çok Dillilik:** Arka planda çalışan dil tespiti ve çeviri katmanı sayesinde, kullanıcılar sorularını kendi dillerinde sorabilmekte ve yine kendi dillerinde cevap alabilmektedir.
     -   **Web Arayüzü:** Gradio ile geliştirilen modern ve kullanıcı dostu arayüz, projenin herkes tarafından kolayca test edilmesini sağlamaktadır.
 
--   🛠️ **Zorluklar ve Öğrenilenler:** Geliştirme sürecinde, özellikle `langchain` ekosistemindeki kütüphaneler arasında yaşanan versiyon uyumsuzlukları (`dependency conflicts`) nedeniyle ciddi `ModuleNotFoundError` hatalarıyla karşılaşılmıştır. Bu zorluklar, aşağıdaki en iyi pratikler uygulanarak metodik bir şekilde aşılmıştır:
-    -   Kütüphaneleri `langchain[google-genai]` gibi doğru bağımlılık gruplarıyla kurmanın önemi.
-    -   Kurulum işlemlerinden sonra Colab oturumunu yeniden başlatmanın (`Restart session`) kritik rolü.
-    -   Sorunlu bir Colab ortamını terk edip temiz bir başlangıç yapmanın (yeni hesap/not defteri) bazen en hızlı çözüm olduğu.
-    -   Bu süreç, bir projenin temelini oluşturan ortam kurulumunun ve hata ayıklama sabrının ne kadar önemli olduğunu göstermiştir.
+-   🛠️ **Zorluklar ve Öğrenilenler:** Geliştirme sürecinde, modern yapay zeka projelerinin doğası gereği birçok teknik zorlukla karşılaşılmış ve bu zorluklar metodik bir hata ayıklama süreciyle aşılmıştır:
+    -   **Bağımlılık Yönetimi (`Dependency Hell`):** Projenin en büyük zorluğu, `langchain`, `google-generativeai` ve `chromadb` gibi hızla gelişen kütüphaneler arasındaki versiyon uyumsuzlukları olmuştur. Bu durum, `ModuleNotFoundError` ve `ResolutionImpossible` gibi kritik kurulum hatalarına yol açmıştır.
+        -   **Öğrenilen Ders:** Kütüphaneleri `pip install -U library` gibi basit komutlarla kurmak yerine, `langchain[google-genai]` gibi entegrasyonu garantileyen özel kurulum komutları kullanmanın veya kütüphaneleri mantıksal gruplar halinde kurmanın bu tür çakışmaları önlediği öğrenilmiştir.
+    -   **Colab Ortamının İncelikleri:** Google Colab'de, `pip install` ile yeni bir kütüphane kurulduktan sonra, çalışan oturumun (kernel) bu yeni kütüphaneyi otomatik olarak tanımadığı tespit edilmiştir.
+        -   **Öğrenilen Ders:** Kurulum işlemlerinden sonra Colab oturumunu manuel olarak yeniden başlatmanın (`Runtime -> Restart session`) "Altın Kural" olduğu ve bu adımın `import` hatalarını kesin olarak çözdüğü anlaşılmıştır.
+    -   **API ve Model Erişimi:** Proje sırasında kullanılan `gemini-1.5-flash` gibi "ön izleme" (preview) modellerine erişimin, API anahtarının yetkilerine ve Google'ın anlık güncellemelerine bağlı olarak değişkenlik gösterebildiği görülmüştür.
+        -   **Öğrenilen Ders:** Bir modelin `Not Found (404)` hatası vermesi durumunda, kütüphaneyi suçlamadan önce `genai.list_models()` gibi yöntemlerle o anki hesap için mevcut olan modelleri doğrulamanın ve kodda bu güncel model adını kullanmanın önemi kavranmıştır.
+    -   **Bu süreç, bir yapay zeka projesinin başarısının sadece iyi bir kod yazmaktan değil, aynı zamanda sağlam bir ortam kurma, sabırlı hata ayıklama ve kullanılan araçların iç dinamiklerini anlama becerisinden geçtiğini göstermiştir.**
