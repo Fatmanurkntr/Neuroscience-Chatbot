@@ -10,7 +10,7 @@ Bu proje, RAG (Retrieval Augmented Generation) mimarisine dayalı, nörobilimsel
 
 Nörobilim Asistanı'nı canlı olarak test etmek için aşağıdaki linke tıklayabilirsiniz. Arayüz, alışkanlıklar, motivasyon, erteleme ve beynin çalışma prensipleri gibi konularda hem Türkçe hem de İngilizce soruları yanıtlayabilir.
 
-**👉 [CANLI DEMO LİNKİNİ BURAYA YAPIŞTIR]**
+**👉 [https://bb718df71b4bb1b43e.gradio.live/]**
 
 *(Not: Bu link, Gradio tarafından oluşturulmuş geçici bir tüneldir ve 72 saat sonra sona erebilir. Linkin çalışması için projenin Colab ortamında aktif olması gerekmektedir.)*
 
