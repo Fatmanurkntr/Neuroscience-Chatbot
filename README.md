@@ -80,11 +80,12 @@ Bu projenin kodlarını kendi ortamınızda (örneğin Google Colab) çalıştı
 
 ### 1. Proje Dosyalarını Edinme (Klonlama)
 
-Öncelikle, projenin tüm dosyalarını içeren bu GitHub reposunu kendi bilgisayarınıza veya bulut ortamınıza klonlayın:
+Öncelikle, projenin tüm dosyalarını içeren bu GitHub reposunu komut satırı aracılığıyla kendi bilgisayarınıza veya bulut ortamınıza klonlayın:
 
 ```bash
 git clone https://github.com/Fatmanurkntr/Neuroscience-Chatbot.git
 cd Neuroscience-Chatbot
+
 
 2.  **Gerekli Kütüphaneleri Kurma:**
     Projenin çalışması için gereken tüm kütüphaneler `requirements.txt` dosyasında listelenmiştir.
